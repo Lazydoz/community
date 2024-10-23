@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.contact a{color: aliceblue; font-size: 25px;margin: 0 20px;}
+
+/*  Content - part A    */
+.partA{ width: 20%; border-right: 1px solid white;}
+.partA .nav{ width: 100%; text-align: center; margin: 10px 0;}
+.partA .nav a{ color: white; text-decoration: none; font-size: 20px;}
+/*  Content - part B    */
+.partB{ width: 80%;}
