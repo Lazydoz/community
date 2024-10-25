@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{ margin: 0; padding: 0; box-sizing: border-box;
+    font-family: "Kanit", sans-serif; font-weight: 200; font-style: normal;
+}
+
+.asset{ width: 15rem; background-color: white;}
+    .asset img{width: 15rem; height: 15rem; object-fit: cover;} 
+    .asset .information{ width: 100%; font-size: 22px; text-align: center;}
+    .asset .source a {
+        color: aliceblue;
+        margin: 0 10px;
+    }
+    .asset .source {
+        background-color: rgb(34, 174, 255); 
+        text-align: center;
+    }
+
+
+/*  NAV BUTTON  */
+#nav{ width: 100%; display: flex; justify-content: center;}
+    #nav button{ margin: 0 10px; width: 3rem;}
