@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../index.css">
 
     <title>Login ???</title>
 </head>
@@ -33,14 +33,19 @@
     <div style="width: 100%; display: flex;">
         <!--    PartA   -->
             <div class="partA">
-                <div class="nav"><a href="">BASES</a></div>
-                <div class="nav"><a href="">CLOTHES</a></div>
-                <div class="nav"><a href="">ASSETS</a></div>
-                <div class="nav"><a href="">TEXTURES</a></div>
+                <div class="btn">
+                    <button class="nav" onclick="DataLoad('../pages/base.html')">BASES</button> <br>
+                    <button class="nav" onclick="DataLoad('../pages/cloth.html')">CLOTHES</button> <br>
+                    <button class="nav" onclick="DataLoad('../pages/asset.html')">ASSETS</button> <br>
+                    <button class="nav" onclick="DataLoad('../pages/texture.html')">TEXTURES</button> <br>
+                    <button class="nav" onclick="DataLoad('../pages/hair.html')">HAIRS</button> <br>
+                    <button class="nav" onclick="DataLoad('../pages/shader.html')">SHADERS</button>
+                </div>
+                
             </div>
         <!--    PartB   -->
             <div class="partB">
-                <iframe src="./pages/base.html" frameborder="0"></iframe>
+                <iframe id="monitor" src="../pages/base.html" frameborder="0"></iframe>
             </div>
     </div>
 
@@ -48,5 +53,6 @@
     <div style="width: 100%; background-color: rgb(8, 0, 32); text-align: center; color: aliceblue;">
         <h3 style="font-size: 25px;">« « « « « ◈ » » » » »</h3>
     </div>
+    <script src="../index.js"></script>
 </body>
 </html>

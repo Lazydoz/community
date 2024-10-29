@@ -5,14 +5,14 @@ const appear_position = document.querySelector("#container");
 let start = 0, end = 20;
 
 function next_page() {
-    start += 10;
-    end += 10;
+    start += 20;
+    end += 20;
     object(); // Cập nhật nội dung
 }
 
 function previous_page() {
-    start -= 10;
-    end -= 10;
+    start -= 20;
+    end -= 20;
     object(); // Cập nhật nội dung
 }
 
