@@ -1,5 +1,5 @@
 let type = document.title;
-const file = ("/data/" + type + ".json"); // lay data
+const file = ("../data/" + type + ".json"); // lay data
 const appear_position = document.querySelector("#container");
 
 let start = 0, end = 20;
