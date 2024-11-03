@@ -34,6 +34,16 @@ body::-webkit-scrollbar {
 /*  NAV BUTTON  */
 .nav{ 
     width: 100%; display: flex; justify-content: center;
+    padding: 20px 0;
     
 }
     .nav button{ margin: 0 10px; width: 3rem;}
+    .nav .page-number{
+        color: aliceblue;
+    }
+    .nav .page-number input{
+        width: 4rem;
+        text-align: center; color: aliceblue; 
+        border: none;
+        background: transparent;
+    }
