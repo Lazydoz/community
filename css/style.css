@@ -41,9 +41,13 @@ body::-webkit-scrollbar {
     .nav .page-number{
         color: aliceblue;
     }
+    .nav .page-number{
+        display: flex;
+    }
     .nav .page-number input{
-        width: 4rem;
+        width: 1.5rem;
         text-align: center; color: aliceblue; 
         border: none;
         background: transparent;
+        margin-right: 10px;
     }

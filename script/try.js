@@ -4,12 +4,19 @@ const appear_position = document.querySelector("#container");
 
 let start = 0, end = 20;
 
+// hien thi trang hien tai dang o
+function current_page(){
+    document.getElementById("page").value = end / 20;
+}
+
+// tai va hien thi du lieu trang tiep theo
 function next_page() {
     start += 20;
     end += 20;
     object(); // Cập nhật nội dung
 }
 
+// tai va hien thi du lieu trang truoc do
 function previous_page() {
     start -= 20;
     end -= 20;
@@ -19,6 +26,7 @@ function previous_page() {
 function object() {
     appear_position.innerHTML = ""; // Xóa nội dung cũ
 
+    current_page(); // trang hien tai
     fetch(file)
         .then(response => response.json())
         .then(data => {
@@ -38,6 +46,10 @@ function object() {
 
                 appear_position.appendChild(appear_obj);
             }
+
+            // tong so trang co
+            let max = data.length / 20 ; let max_page = max.toFixed(0);
+            document.getElementById("max").innerHTML =`/ ${max_page}`; 
         });
 }
 
