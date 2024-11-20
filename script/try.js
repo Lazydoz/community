@@ -8,7 +8,18 @@ let start = 0, end = 20;
 function current_page(){
     document.getElementById("page").value = end / 20;
 }
+// tong so trang hien co
+function max_page(length){
+    
+    let max = length / 20;
+    let thua = length % 20;
 
+    // neu thua thi lam tron 
+    if (thua < 10 ){ 
+        max += 1;
+    }
+    return max.toFixed(0);
+}
 // tai va hien thi du lieu trang tiep theo
 function next_page() {
     start += 20;
@@ -48,8 +59,8 @@ function object() {
             }
 
             // tong so trang co
-            let max = data.length / 20 ; let max_page = max.toFixed(0);
-            document.getElementById("max").innerHTML =`/ ${max_page}`; 
+            //let max = data.length / 20 ; let max_page = max.toFixed(0);
+            document.getElementById("max").innerHTML =`/ ${max_page(data.length)}`; 
         });
 }
 
