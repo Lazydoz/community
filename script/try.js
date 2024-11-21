@@ -26,13 +26,28 @@ function next_page() {
     end += 20;
     object(); // Cập nhật nội dung
 }
-
 // tai va hien thi du lieu trang truoc do
 function previous_page() {
     start -= 20;
     end -= 20;
     object(); // Cập nhật nội dung
 }
+// nhap so trang va nhay den trang do
+var move_page = document.getElementById("page").value;
+function jump_to(move_to_page){
+    end = move_to_page * 20;
+    start = end - 20;
+    object(); // Cập nhật nội dung
+}
+
+// them su kien khi nguoi dung nhap so trang va nhap enter 
+document.getElementById("page").addEventListener('keypress', function(e){ 
+    if (e.key === 'Enter') 
+        { 
+            jump_to(Number(this.value)); 
+        }
+    }
+);
 
 function object() {
     appear_position.innerHTML = ""; // Xóa nội dung cũ
@@ -58,8 +73,6 @@ function object() {
                 appear_position.appendChild(appear_obj);
             }
 
-            // tong so trang co
-            //let max = data.length / 20 ; let max_page = max.toFixed(0);
             document.getElementById("max").innerHTML =`/ ${max_page(data.length)}`; 
         });
 }
