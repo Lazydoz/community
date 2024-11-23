@@ -1,6 +1,9 @@
 let type = document.title;
 const file = ("../data/" + type + ".json"); // lay data
-const appear_position = document.querySelector("#container");
+const file1 = ("../data/" + type + ".json"); // lay data
+const file2 = ("../data/" + "n_" + type + ".json"); // lay data
+
+const appear_position = document.querySelector("#container"); // cho xuat hien
 
 let start = 0, end = 20;
 
@@ -39,7 +42,6 @@ function jump_to(move_to_page){
     start = end - 20;
     object(); // Cập nhật nội dung
 }
-
 // them su kien khi nguoi dung nhap so trang va nhap enter 
 document.getElementById("page").addEventListener('keypress', function(e){ 
     if (e.key === 'Enter') 
@@ -48,16 +50,31 @@ document.getElementById("page").addEventListener('keypress', function(e){
         }
     }
 );
+// Hàm  lấy dữ liệu từ file JSON 
+async function fetchJSON(filex) { 
+    const response = await fetch(filex); 
+    const data = await response.json(); 
+    return data; 
+} 
+// Hàm  kết hợp hai file JSON 
+async function mergeJSONFiles(file1, file2){ 
+    const data1 = await fetchJSON(file1); 
+    const data2 = await fetchJSON(file2); 
+    
+    // Kết hợp hai mảng JSON 
+    const mergedData = [...data1, ...data2]; 
+    return mergedData; 
+}
 
+/*---         MAIN PROGRAM           ---*/
 function object() {
     appear_position.innerHTML = ""; // Xóa nội dung cũ
 
     current_page(); // trang hien tai
-    fetch(file)
-        .then(response => response.json())
-        .then(data => {
-            for (let i = start; i < end && i < data.length; i++) {
-                const obj = data[i];
+    mergeJSONFiles(file2, file1)
+        .then(mergedData => { 
+            for (let i = start; i < end && i < mergedData.length; i++) {
+                const obj = mergedData[i];
                 const appear_obj = document.createElement("div");
                 appear_obj.classList.add("asset");
 
@@ -73,7 +90,7 @@ function object() {
                 appear_position.appendChild(appear_obj);
             }
 
-            document.getElementById("max").innerHTML =`/ ${max_page(data.length)}`; 
+            document.getElementById("max").innerHTML =`/ ${max_page(mergedData.length)}`; 
         });
 }
 
